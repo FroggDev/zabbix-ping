@@ -92,7 +92,7 @@
                     </applications>
                     <triggers>
                         <trigger>
-                            <expression>({avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN})+({$ICMP_DISABLED_RESPONSETIME_CHECK})=1</expression>
+                            <expression>({avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN})-({$ICMP_DISABLED_RESPONSETIME_CHECK})=1</expression>
                             <name>High ICMP ping response time on {HOST.NAME}</name>
                             <opdata>Value: {ITEM.LASTVALUE1}</opdata>
                             <priority>WARNING</priority>
@@ -234,7 +234,7 @@
                     </applications>
                     <triggers>
                         <trigger>
-                            <expression>({avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN})+({$ICMP_DISABLED_RESPONSETIME_CHECK})=1</expression>
+                            <expression>({avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN})-({$ICMP_DISABLED_RESPONSETIME_CHECK})=1</expression>
                             <name>High ICMP ping response time on {HOST.NAME}</name>
                             <opdata>Value: {ITEM.LASTVALUE1}</opdata>
                             <priority>WARNING</priority>
@@ -376,7 +376,7 @@
                     </applications>
                     <triggers>
                         <trigger>
-                            <expression>({avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN})+({$ICMP_DISABLED_RESPONSETIME_CHECK})=1</expression>
+                            <expression>({avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN})-({$ICMP_DISABLED_RESPONSETIME_CHECK})=1</expression>
                             <name>High ICMP ping response time on {HOST.NAME}</name>
                             <opdata>Value: {ITEM.LASTVALUE1}</opdata>
                             <priority>INFO</priority>
@@ -518,7 +518,7 @@
                     </applications>
                     <triggers>
                         <trigger>
-                            <expression>({avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN})+({$ICMP_DISABLED_RESPONSETIME_CHECK})=1</expression>
+                            <expression>({avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN})-({$ICMP_DISABLED_RESPONSETIME_CHECK})=1</expression>
                             <name>High ICMP ping response time on {HOST.NAME}</name>
                             <opdata>Value: {ITEM.LASTVALUE1}</opdata>
                             <priority>INFO</priority>
