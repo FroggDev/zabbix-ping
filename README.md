@@ -38,7 +38,6 @@ MACRO | Description
 {$ICMP_DISABLED_HOSTNAME_CHECK} | if set to 1 disable the display of problems on hostname
 {$ICMP_DISABLED_RESPONSETIME_CHECK} | if set to 1 disable the display of problems on response time
 
-
 # Template items
 ![Zabbix Ping items sample](https://tool.frogg.fr/upload/github/zabbix-ping/items.png)
 
