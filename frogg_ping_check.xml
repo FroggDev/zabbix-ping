@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-03-13T11:04:46Z</date>
+    <date>2020-03-13T17:35:50Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -122,14 +122,6 @@
                     <valuemap>
                         <name>Service state</name>
                     </valuemap>
-                    <triggers>
-                        <trigger>
-                            <expression>({max(3)})+({$ICMP_DISABLED_HOSTNAME_CHECK})=0</expression>
-                            <name>{HOST.NAME} unavailable by Hostname</name>
-                            <priority>AVERAGE</priority>
-                            <description>Last three attempts returned timeout.  Please check device connectivity.</description>
-                        </trigger>
-                    </triggers>
                 </item>
             </items>
             <macros>
@@ -264,14 +256,6 @@
                     <valuemap>
                         <name>Service state</name>
                     </valuemap>
-                    <triggers>
-                        <trigger>
-                            <expression>({max(3)})+({$ICMP_DISABLED_HOSTNAME_CHECK})=0</expression>
-                            <name>{HOST.NAME} unavailable by Hostname</name>
-                            <priority>HIGH</priority>
-                            <description>Last three attempts returned timeout.  Please check device connectivity.</description>
-                        </trigger>
-                    </triggers>
                 </item>
             </items>
             <macros>
@@ -406,14 +390,6 @@
                     <valuemap>
                         <name>Service state</name>
                     </valuemap>
-                    <triggers>
-                        <trigger>
-                            <expression>({max(3)})+({$ICMP_DISABLED_HOSTNAME_CHECK})=0</expression>
-                            <name>{HOST.NAME} unavailable by Hostname</name>
-                            <priority>INFO</priority>
-                            <description>Last three attempts returned timeout.  Please check device connectivity.</description>
-                        </trigger>
-                    </triggers>
                 </item>
             </items>
             <macros>
@@ -548,14 +524,6 @@
                     <valuemap>
                         <name>Service state</name>
                     </valuemap>
-                    <triggers>
-                        <trigger>
-                            <expression>({max(3)})+({$ICMP_DISABLED_HOSTNAME_CHECK})=0</expression>
-                            <name>{HOST.NAME} unavailable by Hostname</name>
-                            <priority>WARNING</priority>
-                            <description>Last three attempts returned timeout.  Please check device connectivity.</description>
-                        </trigger>
-                    </triggers>
                 </item>
             </items>
             <macros>
@@ -580,6 +548,32 @@
             </macros>
         </template>
     </templates>
+    <triggers>
+        <trigger>
+            <expression>{$ICMP_DISABLED_HOSTNAME_CHECK}=0 and {Template Module Ping average:icmpping.max(3)}=1 and {Template Module Ping average:icmpping[{HOST.HOST}].max(3)}=0</expression>
+            <name>{HOST.NAME} unavailable by Hostname</name>
+            <priority>AVERAGE</priority>
+            <description>Last three attempts returned timeout.  Please check device connectivity.</description>
+        </trigger>
+        <trigger>
+            <expression>{$ICMP_DISABLED_HOSTNAME_CHECK}=0 and {Template Module Ping high:icmpping.max(3)}=1 and {Template Module Ping high:icmpping[{HOST.HOST}].max(3)}=0</expression>
+            <name>{HOST.NAME} unavailable by Hostname</name>
+            <priority>HIGH</priority>
+            <description>Last three attempts returned timeout.  Please check device connectivity.</description>
+        </trigger>
+        <trigger>
+            <expression>{$ICMP_DISABLED_HOSTNAME_CHECK}=0 and {Template Module Ping information:icmpping.max(3)}=1 and {Template Module Ping information:icmpping[{HOST.HOST}].max(3)}=0</expression>
+            <name>{HOST.NAME} unavailable by Hostname</name>
+            <priority>INFO</priority>
+            <description>Last three attempts returned timeout.  Please check device connectivity.</description>
+        </trigger>
+        <trigger>
+            <expression>{$ICMP_DISABLED_HOSTNAME_CHECK}=0 and {Template Module Ping warning:icmpping.max(3)}=1 and {Template Module Ping warning:icmpping[{HOST.HOST}].max(3)}=0</expression>
+            <name>{HOST.NAME} unavailable by Hostname</name>
+            <priority>WARNING</priority>
+            <description>Last three attempts returned timeout.  Please check device connectivity.</description>
+        </trigger>
+    </triggers>
     <value_maps>
         <value_map>
             <name>Service state</name>
