@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-03-13T09:42:06Z</date>
+    <date>2020-03-13T10:59:01Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -45,7 +45,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#3)}=0</expression>
-                            <name>{HOST.NAME} not available by IP</name>
+                            <name>{HOST.NAME} not available</name>
                             <priority>AVERAGE</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -71,7 +71,7 @@
                             <priority>WARNING</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>{HOST.NAME} not available by IP</name>
+                                    <name>{HOST.NAME} not available</name>
                                     <expression>{Template Module Ping average:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -102,7 +102,7 @@
                                     <expression>{Template Module Ping average:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Template Module Ping average:icmppingloss.min(5m)}&lt;100</expression>
                                 </dependency>
                                 <dependency>
-                                    <name>{HOST.NAME} not available by IP</name>
+                                    <name>{HOST.NAME} not available</name>
                                     <expression>{Template Module Ping average:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -187,7 +187,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#3)}=0</expression>
-                            <name>{HOST.NAME} not available by IP</name>
+                            <name>{HOST.NAME} not available</name>
                             <priority>HIGH</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -213,7 +213,7 @@
                             <priority>AVERAGE</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>{HOST.NAME} not available by IP</name>
+                                    <name>{HOST.NAME} not available</name>
                                     <expression>{Template Module Ping high:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -244,7 +244,7 @@
                                     <expression>{Template Module Ping high:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Template Module Ping high:icmppingloss.min(5m)}&lt;100</expression>
                                 </dependency>
                                 <dependency>
-                                    <name>{HOST.NAME} not available by IP</name>
+                                    <name>{HOST.NAME} not available</name>
                                     <expression>{Template Module Ping high:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -278,12 +278,12 @@
                 <macro>
                     <macro>{$ICMP_DISABLED_HOSTNAME_CHECK}</macro>
                     <value>0</value>
-                    <description>if 1 disable ping on hostname check</description>
+                    <description>if set to 1 disable the display of problems on hostname</description>
                 </macro>
                 <macro>
                     <macro>{$ICMP_DISABLED_RESPONSETIME_CHECK}</macro>
                     <value>0</value>
-                    <description>if 1 disable ping on high response time check</description>
+                    <description>if set to 1 disable the display of problems on response time</description>
                 </macro>
                 <macro>
                     <macro>{$ICMP_LOSS_WARN}</macro>
@@ -329,7 +329,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#3)}=0</expression>
-                            <name>{HOST.NAME} not available by IP</name>
+                            <name>{HOST.NAME} not available</name>
                             <priority>INFO</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -355,7 +355,7 @@
                             <priority>INFO</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>{HOST.NAME} not available by IP</name>
+                                    <name>{HOST.NAME} not available</name>
                                     <expression>{Template Module Ping information:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -386,7 +386,7 @@
                                     <expression>{Template Module Ping information:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Template Module Ping information:icmppingloss.min(5m)}&lt;100</expression>
                                 </dependency>
                                 <dependency>
-                                    <name>{HOST.NAME} not available by IP</name>
+                                    <name>{HOST.NAME} not available</name>
                                     <expression>{Template Module Ping information:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -420,12 +420,12 @@
                 <macro>
                     <macro>{$ICMP_DISABLED_HOSTNAME_CHECK}</macro>
                     <value>0</value>
-                    <description>if 1 disable ping on hostname check</description>
+                    <description>if set to 1 disable the display of problems on hostname</description>
                 </macro>
                 <macro>
                     <macro>{$ICMP_DISABLED_RESPONSETIME_CHECK}</macro>
                     <value>0</value>
-                    <description>if 1 disable ping on high response time check</description>
+                    <description>if set to 1 disable the display of problems on response time</description>
                 </macro>
                 <macro>
                     <macro>{$ICMP_LOSS_WARN}</macro>
@@ -471,7 +471,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#3)}=0</expression>
-                            <name>{HOST.NAME} not available by IP</name>
+                            <name>{HOST.NAME} not available</name>
                             <priority>WARNING</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -497,7 +497,7 @@
                             <priority>INFO</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>{HOST.NAME} not available by IP</name>
+                                    <name>{HOST.NAME} not available</name>
                                     <expression>{Template Module Ping warning:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -528,7 +528,7 @@
                                     <expression>{Template Module Ping warning:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Template Module Ping warning:icmppingloss.min(5m)}&lt;100</expression>
                                 </dependency>
                                 <dependency>
-                                    <name>{HOST.NAME} not available by IP</name>
+                                    <name>{HOST.NAME} not available</name>
                                     <expression>{Template Module Ping warning:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -562,12 +562,12 @@
                 <macro>
                     <macro>{$ICMP_DISABLED_HOSTNAME_CHECK}</macro>
                     <value>0</value>
-                    <description>if 1 disable ping on hostname check</description>
+                    <description>if set to 1 disable the display of problems on hostname</description>
                 </macro>
                 <macro>
                     <macro>{$ICMP_DISABLED_RESPONSETIME_CHECK}</macro>
                     <value>0</value>
-                    <description>if 1 disable ping on high response time check</description>
+                    <description>if set to 1 disable the display of problems on response time</description>
                 </macro>
                 <macro>
                     <macro>{$ICMP_LOSS_WARN}</macro>
