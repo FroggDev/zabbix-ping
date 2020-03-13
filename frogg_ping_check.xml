@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-03-13T10:59:01Z</date>
+    <date>2020-03-13T11:04:46Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -45,7 +45,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#3)}=0</expression>
-                            <name>{HOST.NAME} not available</name>
+                            <name>{HOST.NAME} unavailable</name>
                             <priority>AVERAGE</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -71,7 +71,7 @@
                             <priority>WARNING</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>{HOST.NAME} not available</name>
+                                    <name>{HOST.NAME} unavailable</name>
                                     <expression>{Template Module Ping average:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -102,7 +102,7 @@
                                     <expression>{Template Module Ping average:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Template Module Ping average:icmppingloss.min(5m)}&lt;100</expression>
                                 </dependency>
                                 <dependency>
-                                    <name>{HOST.NAME} not available</name>
+                                    <name>{HOST.NAME} unavailable</name>
                                     <expression>{Template Module Ping average:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -125,7 +125,7 @@
                     <triggers>
                         <trigger>
                             <expression>({max(3)})+({$ICMP_DISABLED_HOSTNAME_CHECK})=0</expression>
-                            <name>{HOST.NAME} not available by Hostname</name>
+                            <name>{HOST.NAME} unavailable by Hostname</name>
                             <priority>AVERAGE</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -187,7 +187,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#3)}=0</expression>
-                            <name>{HOST.NAME} not available</name>
+                            <name>{HOST.NAME} unavailable</name>
                             <priority>HIGH</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -213,7 +213,7 @@
                             <priority>AVERAGE</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>{HOST.NAME} not available</name>
+                                    <name>{HOST.NAME} unavailable</name>
                                     <expression>{Template Module Ping high:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -244,7 +244,7 @@
                                     <expression>{Template Module Ping high:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Template Module Ping high:icmppingloss.min(5m)}&lt;100</expression>
                                 </dependency>
                                 <dependency>
-                                    <name>{HOST.NAME} not available</name>
+                                    <name>{HOST.NAME} unavailable</name>
                                     <expression>{Template Module Ping high:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -267,7 +267,7 @@
                     <triggers>
                         <trigger>
                             <expression>({max(3)})+({$ICMP_DISABLED_HOSTNAME_CHECK})=0</expression>
-                            <name>{HOST.NAME} not available by Hostname</name>
+                            <name>{HOST.NAME} unavailable by Hostname</name>
                             <priority>HIGH</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -329,7 +329,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#3)}=0</expression>
-                            <name>{HOST.NAME} not available</name>
+                            <name>{HOST.NAME} unavailable</name>
                             <priority>INFO</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -355,7 +355,7 @@
                             <priority>INFO</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>{HOST.NAME} not available</name>
+                                    <name>{HOST.NAME} unavailable</name>
                                     <expression>{Template Module Ping information:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -386,7 +386,7 @@
                                     <expression>{Template Module Ping information:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Template Module Ping information:icmppingloss.min(5m)}&lt;100</expression>
                                 </dependency>
                                 <dependency>
-                                    <name>{HOST.NAME} not available</name>
+                                    <name>{HOST.NAME} unavailable</name>
                                     <expression>{Template Module Ping information:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -409,7 +409,7 @@
                     <triggers>
                         <trigger>
                             <expression>({max(3)})+({$ICMP_DISABLED_HOSTNAME_CHECK})=0</expression>
-                            <name>{HOST.NAME} not available by Hostname</name>
+                            <name>{HOST.NAME} unavailable by Hostname</name>
                             <priority>INFO</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -471,7 +471,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#3)}=0</expression>
-                            <name>{HOST.NAME} not available</name>
+                            <name>{HOST.NAME} unavailable</name>
                             <priority>WARNING</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
@@ -497,7 +497,7 @@
                             <priority>INFO</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>{HOST.NAME} not available</name>
+                                    <name>{HOST.NAME} unavailable</name>
                                     <expression>{Template Module Ping warning:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -528,7 +528,7 @@
                                     <expression>{Template Module Ping warning:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Template Module Ping warning:icmppingloss.min(5m)}&lt;100</expression>
                                 </dependency>
                                 <dependency>
-                                    <name>{HOST.NAME} not available</name>
+                                    <name>{HOST.NAME} unavailable</name>
                                     <expression>{Template Module Ping warning:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
@@ -551,7 +551,7 @@
                     <triggers>
                         <trigger>
                             <expression>({max(3)})+({$ICMP_DISABLED_HOSTNAME_CHECK})=0</expression>
-                            <name>{HOST.NAME} not available by Hostname</name>
+                            <name>{HOST.NAME} unavailable by Hostname</name>
                             <priority>WARNING</priority>
                             <description>Last three attempts returned timeout.  Please check device connectivity.</description>
                         </trigger>
