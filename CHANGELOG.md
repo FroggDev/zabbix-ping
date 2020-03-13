@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2020-03-13
+### Added
+- Trigger ping by hostname problem only if can ping by ip
+
 ## [1.0.0] - 2020-03-10
 ### Added
 - First version
